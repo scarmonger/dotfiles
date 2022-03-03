@@ -1,0 +1,359 @@
+" source from vim
+" :so %
+" :option - to check option
+" :bd / bw to delete buffer
+
+
+nnoremap ; :
+nnoremap : ;
+let mapleader = " "
+
+" Mapping to reload configuration
+"nnoremap <leader>aa :source /home/xyz/.config/nvim/init.vim <CR>
+"nnmap <leader>aa :source /home/xyz/.config/nvim/init.vim <CR>
+nnoremap <leader>ww :so%<CR>
+
+" Shortcut for telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fh <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr><esc>
+nnoremap <leader>fH <cmd>Telescope help_tags<cr>
+nnoremap <leader>fc <cmd>Telescope command_history<cr><esc>
+nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
+
+"nnoremap <Leader>ff :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
+
+"Replace all is aliased to S
+nnoremap S :%s//gc<left><left><left>
+
+nnoremap <F2> "qyy
+vnoremap <F2> "qy
+nnoremap <F3> "qP
+inoremap <F3> <C-r>q 
+
+" Copy file name path to clipboard
+nnoremap <F10> :let @+ = expand("%:p")<CR>
+
+" This appends the current date and time after the cursor (in <> notation |<>|).
+map <F11> a<C-R>=strftime("%c")<CR><Esc>
+
+nnoremap <F5> :UndotreeToggle<CR>
+
+" Other shortcut
+" nmap <leader>b :b
+"nnoremap <leader>a :w<cr>
+nnoremap <leader>w :w<cr>
+
+" Change directory to current directory"
+nnoremap <leader>wc :cd %:h<cr>
+
+" Change directory "
+nnoremap <leader>wa :cd /home/xyz/Documents/github/dataon<cr>:pwd<CR>
+nnoremap <leader>wt :cd /home/xyz/Documents/github/tech<cr>:pwd<CR>
+nnoremap <leader>wp :cd /home/xyz/Documents/github/personal<cr>:pwd<CR>
+
+nnoremap <leader>p :PlugInstall<cr>
+
+" Remove Highlight"
+nnoremap \ :noh<cr>
+
+" CDC = Change to Directory of Current file
+command! DATAON cd /home/xyz/Documents/github/dataon
+command! TECH cd /home/xyz/Documents/github/tech
+command! PE cd /home/xyz/Documents/github/personal
+
+" Tab navigation
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+
+" Project Drawer
+nnoremap <F9> :cd %:h<cr> :Lexplore<CR>
+
+" Window Navigation
+nnoremap <tab> :wincmd w<CR>
+inoremap <leader><tab> <ESC> :wincmd w<CR>i
+"nnoremap <C-S-tab> :wincmd p<CR>i
+"nnoremap <C-tab> :wincmd w<CR>i
+
+
+" BASIC SETUP:
+
+" do not look for compatibility with old vi
+set nocompatible
+
+" enable syntax and plugins (for netrw)
+set exrc
+set number
+set relativenumber
+set hlsearch
+set hidden
+set noerrorbells
+set smartindent
+set ic
+set smartcase
+set tabstop=2
+set shiftwidth=2
+set softtabstop=0 noexpandtab
+set nowrap
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+syntax enable
+filetype plugin on
+
+set incsearch
+set scrolloff=8
+set colorcolumn=80
+set signcolumn=yes
+set showcmd
+
+" disable auto commenting to next line
+" :help fo-table
+set formatoptions-=cro
+
+" Make ctrl-c in visual mode yank to x clipboard
+"vnoremap <C-c> "+y
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
+
+vnoremap <leader>\ "qy
+nnoremap <leader>\ "qp
+
+" Luke Smith
+set title
+set bg=dark
+set go=a
+set mouse=a
+set clipboard+=unnamedplus
+" set noshowmode
+
+" KEY REMAP: ThePrimeagen
+" Number 5: make big Y to copy from cursor to end of the line
+nnoremap Y y$
+
+" Number 4: Keeping it centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+"nnoremap J mzJ'z
+nnoremap <C-j> :cnext<CR>zzzv
+nnoremap <C-k> :cprevious<CR>zzzv
+
+"Paste from x clipboard"
+inoremap <C-v> <C-r>+
+
+nnoremap <C-a> gg0VG
+inoremap <C-a> gg0VG
+" nnoremap <C-s> gt
+" inoremap <C-s> gt
+
+" Number 3: Undo Break Points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+inoremap <space> <space><c-g>u
+
+" Number 2: Jumplist mutations
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" Number 1: Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==i
+inoremap <C-k> <esc>:m .-2<CR>==i
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
+" File explorer toggle "
+
+
+" FINDING FILES: - THOUGHTBOT
+
+" Search down into subfolders
+" Provides tab-completion for all file-relates tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" NOW WE CAN:
+" - Hit tab to :find by partial match
+" - Use * to make it fuzzy
+
+" THINGS TO CONSIDER:
+" - :b lets you autocomplete any open buffer
+" - :ls show files openned
+" - :bw clear screen
+
+
+" TAG JUMPING:
+"
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+
+" NOW WE CAN:
+" - Use ^] to jump to tag under cursor
+" - Use g^] for ambiguous tags, show list of tags and just put a number to go
+" - Use ^t to jump back up the tag stack
+"
+" THINGS TO CONSIDER:
+" - This doesn't help if you want a visual list of tags
+
+
+
+" AUTOCOMPLETE:
+"
+" The good stuff is documented in |ins-completion|
+"
+" HIGHLIGHTS:
+" - ^x^n for JUST this file
+"   ^x^f for filenames (works with our path trick!)
+"   ^x^] for tags only
+"   ^n for anything specified by the 'complete' option
+"
+" NOW WE CAN:
+" - Use ^n and ^p to go back and forth in the suggestion list
+
+
+
+
+" FILE BROWSING:
+"
+" Tweaks for browsing
+let g:netrw_banner=0		" disable annoying banner
+let g:netrw_browse_split=4	" open in prior window
+let g:netrw_altv=1		" open splits to the right
+let g:netrw_liststyle=3		" tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\S\s\)\zs\.\S\+'
+let g:netrw_winsize=25
+let g:netrw_preview=1
+
+
+" NOW WE CAN:
+" - :edit a folder to open a file browser
+" - <CR>/v/t to open in an h-split/v-split/tab
+" - check |netrw-browse-maps| for more mappings
+
+
+
+" SNIPPETS:
+"
+" Read an empty HTML template and move cursor to title
+nnoremap ,html :read $HOME/.config/nvim/.skeleton.html<CR>3jwf>a
+" nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
+
+" NOW WE CAN:
+" - Take over the world!
+"   (with much fewer keystrokes)
+
+
+" BUILD INTEGRATION:
+"
+" Steal Mr. Bradley's formatter and add it to our spec_helper
+" http://philipbradley.net/rspec-into-vim-with-quickfix
+"
+" Configure the `make` command to run RSpec
+set makeprg=bundle\ exec\ rspec\ -f\ QuickFixFormatter
+
+" NOW WE CAN:
+" - Run :make to run RSpec
+" - :cl to list errors
+" - :cc# to jump to error by number
+" - :cn and :cp to navigate forward and back
+
+
+" Use Help in VIM:
+" :h ^r
+" :h i_^r
+" :h c_^r
+" :helpgrep windows, after run through the list using :cl, :cc, :cn or :cp
+" - :cl to list errors
+" - :cc# to jump to error by number
+" - :cn and :cp to navigate forward and back
+
+
+" Vundle
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-commentary'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'tpope/vim-liquid'
+" nerdtree
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kyazdani42/nvim-web-devicons'
+
+" Colorscheme
+Plug 'gruvbox-community/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'phanviet/vim-monokai-pro'
+Plug 'mbbill/undotree'
+"Plug 'https://github.com/adelarsq/vim-matchit'
+"Plug 'simnalamburt/vim-mundo'
+
+" Initialize plugin system
+call plug#end()
+
+set t_Co=256
+set termguicolors
+"let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_termcolors = '16'
+colorscheme gruvbox
+highlight Normal guibg=none
+
+"autocommand example TrimWhitespace
+"fun! TrimWhitespace()
+"	let l:save = winsaveview()
+"	keeppatterns %s/\s\+$//e
+"	call winrestview(l:save)
+"endfun
+"
+"augroup THE_PRIMEAGEN
+"	autocmd!
+"	autocmd BufWritePre * :call TrimWhitespace()
+"augroup END
+
+filetype plugin indent on
+inoremap ' ''<ESC>ha
+inoremap " ""<ESC>ha
+inoremap ` ``<ESC>ha
+inoremap ( ()<ESC>ha
+inoremap [ []<ESC>ha
+inoremap { {}<ESC>ha
+inoremap /* /** */<ESC>2ha
+
+"Mapping related to PHP
+inoremap ;; <C-o>A;
+inoremap ,, <C-o>A,
+
+"inoremap =<space> <space>=<space>
+inoremap =><space> <space>=><space>
