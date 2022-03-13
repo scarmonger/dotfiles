@@ -153,6 +153,11 @@ bindsym $wew+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $wew+minus scratchpad show
 
+# Show the skype scratchpad window, if already open
+bindsym $mod+c [title="Skype"] scratchpad show
+bindsym $wew+c [title="Skype"] scratchpad show
+
+
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
@@ -246,8 +251,8 @@ bindsym $wew+Shift+0 move container to workspace $ws10; workspace $ws10
 assign [class="google-chrome"] $ws1
 # assign [class="firefox"] $ws2
 assign [class="ksnip"] $ws8
-assign [class="whatsapp-4linux"] $ws9
-assign [class="Skype"] $ws10
+#assign [class="whatsapp-4linux"] $ws9
+#assign [class="Skype"] $ws10
 
 # Open specific applications in floating mode
 for_window [class="Galculator"] floating enable border pixel 1
@@ -341,7 +346,8 @@ smart_gaps on
 smart_borders on
                                  
 ## Marc
-## Background app
+
+# Background app
 exec --no-startup-id volumeicon
 exec_always --no-startup-id numlockx on
 
@@ -352,15 +358,17 @@ exec_always --no-startup-id xset r rate 300 50
 exec_always --no-startup-id setxkbmap -option caps:escape
 
 
-exec --no-startup-id ksnip
-exec --no-startup-id skypeforlinux
-exec --no-startup-id whatsapp-4linux
+# exec --no-startup-id ksnip
+# exec --no-startup-id skypeforlinux
+# exec --no-startup-id /opt/google/chrome/google-chrome --profile-directory=Default --app-id=lljldmnnhjkandejalbjlndemhlcjepa
+# exec --no-startup-id whatsapp-4linux
+exec --no-startup-id copyq
 
 ## Start mount drive automatically
 exec --no-startup-id udiskie -a
 
 ## Setup display monitor
-exec --no-startup-id xrandr --output LVDS-1 --auto --output VGA-1 --mode 1600x900 --left-of LVDS-1
+exec --no-startup-id xrandr --output LVDS-1 --auto --output VGA-1 --primary --mode 1600x900 --left-of LVDS-1
 
 # exec --no-startup-id xrandr --output LVDS-1 --auto --output VGA-1 --mode 1920x1080 --right-of LVDS-1
 
@@ -382,12 +390,13 @@ bindsym $mod+Shift+F3 exec pcmanfm
 bindsym $mod+F4 exec obsidian
 bindsym $mod+F5 exec kitty -e 'mocp'
 bindsym $mod+F9 exec whatsapp-4linux 
-bindsym $mod+F10 exec skypeforlinux 
+#bindsym $mod+F10 exec skypeforlinux 
+bindsym $mod+F10 exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=lljldmnnhjkandejalbjlndemhlcjepa
 bindsym $mod+F12 exec kitty -e ping gmail.com 
 bindsym $mod+Shift+F12 exec kitty -e ping 192.168.0.1 -s 1000
 bindsym $mod+Shift+d --release exec "killall dunst"
 # bindsym $mod+z exec kitty -e 'nvim'
-bindsym Print exec --no-startup-id flameshot gui
+bindsym Print exec --no-startup-id ksnip
 
 # Lock screen$
 bindsym $mod+Escape exec --no-startup-id i3lock -etfi /home/xyz/Documents/eOS/tea.png

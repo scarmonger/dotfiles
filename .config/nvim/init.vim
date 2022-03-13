@@ -1,17 +1,79 @@
 " source from vim
 " :so %
-" :option - to check option
+" :option - to check option the primeagen
 " :bd / bw to delete buffer
 
+" Installing vim on windows
+" :version
+" 1. check vimrc path, 32/64 bit gvim version
+" 2. check python2 and python 3 version: current 2.7dll and 3.9
+
+" :echo has("python") check for python2 // return 0 or 1
+" :echo has("python3_dynamic")  check for python3 is installed
+
+" 1.key remap
+
+
+let mapleader = " "
+let maplocalleader = "\\"
 
 nnoremap ; :
 nnoremap : ;
-let mapleader = " "
+
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+	elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+		nnoremap <leader>so :source $HOME\_vimrc<CR>
+		nnoremap <leader>ev :vsplit $$HOME\_vimrc<cr>
+    set guifont=Consolas:h11:cANSI
+    set linespace=1
+    set guioptions-=m  "menu bar
+    set guioptions-=T  "toolbar
+    set guioptions-=r  "scrollbar
+    set backspace=indent,eol,start
+		set encoding=utf-8
+		echom "asik"
+  endif
+else
+	nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+	nnoremap <leader>ei :vsplit /home/xyz/.config/i3/config<cr>
+	nnoremap <leader>er :vsplit /home/xyz/.config/ranger/rc.conf<cr>
+	nnoremap <leader>eb :vsplit /home/xyz/.bashrc<cr>
+	nnoremap <leader>so :source $MYVIMRC<CR>
+
+endif
+" Delete line when insert mode
+inoremap <c-d> <esc>ddi
+
+" Ctrl u for upper case a word
+inoremap <c-u> <esc>bvegUea
+nnoremap <c-u> bvegUe
+
+" Surround word with double quotes
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+nnoremap <leader>< viw<esc>a><esc>hbi<<esc>lel
+
+vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>2l
+vnoremap <leader>' <esc>a'<esc>`<i'<esc>`>2l
+
+nnoremap H 0
+nnoremap L $
+vnoremap H 0
+vnoremap L $
+inoremap jk <esc>
+
+" <nop> (no operation)
+" inoremap <esc> <nop>
 
 " Mapping to reload configuration
 "nnoremap <leader>aa :source /home/xyz/.config/nvim/init.vim <CR>
 "nnmap <leader>aa :source /home/xyz/.config/nvim/init.vim <CR>
-nnoremap <leader>ww :so%<CR>
 
 " Shortcut for telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -36,7 +98,7 @@ inoremap <F3> <C-r>q
 nnoremap <F10> :let @+ = expand("%:p")<CR>
 
 " This appends the current date and time after the cursor (in <> notation |<>|).
-map <F11> a<C-R>=strftime("%c")<CR><Esc>
+noremap <F11> a<C-R>=strftime("%c")<CR><Esc>
 
 nnoremap <F5> :UndotreeToggle<CR>
 
@@ -58,11 +120,6 @@ nnoremap <leader>p :PlugInstall<cr>
 " Remove Highlight"
 nnoremap \ :noh<cr>
 
-" CDC = Change to Directory of Current file
-command! DATAON cd /home/xyz/Documents/github/dataon
-command! TECH cd /home/xyz/Documents/github/tech
-command! PE cd /home/xyz/Documents/github/personal
-
 " Tab navigation
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
@@ -80,50 +137,16 @@ nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
 " Project Drawer
-nnoremap <F9> :cd %:h<cr> :Lexplore<CR>
+nnoremap <F9> :Lexplore<CR>
+inoremap <F9> :Lexplore<CR>
+nnoremap <S-F9> :cd %:h<cr> :Lexplore<CR>
+inoremap <S-F9> :cd %:h<cr> :Lexplore<CR>
 
 " Window Navigation
 nnoremap <tab> :wincmd w<CR>
 inoremap <leader><tab> <ESC> :wincmd w<CR>i
 "nnoremap <C-S-tab> :wincmd p<CR>i
 "nnoremap <C-tab> :wincmd w<CR>i
-
-
-" BASIC SETUP:
-
-" do not look for compatibility with old vi
-set nocompatible
-
-" enable syntax and plugins (for netrw)
-set exrc
-set number
-set relativenumber
-set hlsearch
-set hidden
-set noerrorbells
-set smartindent
-set ic
-set smartcase
-set tabstop=2
-set shiftwidth=2
-set softtabstop=0 noexpandtab
-set nowrap
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-syntax enable
-filetype plugin on
-
-set incsearch
-set scrolloff=8
-set colorcolumn=80
-set signcolumn=yes
-set showcmd
-
-" disable auto commenting to next line
-" :help fo-table
-set formatoptions-=cro
 
 " Make ctrl-c in visual mode yank to x clipboard
 "vnoremap <C-c> "+y
@@ -133,14 +156,6 @@ nnoremap <leader>Y gg"+yG
 
 vnoremap <leader>\ "qy
 nnoremap <leader>\ "qp
-
-" Luke Smith
-set title
-set bg=dark
-set go=a
-set mouse=a
-set clipboard+=unnamedplus
-" set noshowmode
 
 " KEY REMAP: ThePrimeagen
 " Number 5: make big Y to copy from cursor to end of the line
@@ -166,7 +181,7 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
-inoremap <space> <space><c-g>u
+""inoremap <space> <space><c-g>u
 
 " Number 2: Jumplist mutations
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
@@ -180,7 +195,143 @@ inoremap <C-k> <esc>:m .-2<CR>==i
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
-" File explorer toggle "
+
+filetype plugin indent on
+inoremap ' ''<ESC>ha
+inoremap " ""<ESC>ha
+inoremap ` ``<ESC>ha
+inoremap ( ()<ESC>ha
+inoremap [ []<ESC>ha
+inoremap { {}<ESC>ha
+inoremap /* /** */<ESC>2ha
+
+"Mapping related to PHP
+inoremap ;; <C-o>A;
+inoremap ,, <C-o>A,
+
+"inoremap =<space> <space>=<space>
+inoremap =><space> <space>=><space>
+
+" 2-abbreviation
+
+iabbrev adn and
+iabbrev waht what
+iabbrev tehn then
+iabbrev mabort Marc abort line @<cfabort><esc>F@a
+iabbrev mdump <cfdump var='##' label='' expand='yes'><esc><space>C<esc>F#i
+
+" 3.plugin
+" Vundle
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-commentary'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'tpope/vim-liquid'
+" nerdtree
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+if has("gui_running")
+	echo "nothing"
+else
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	Plug 'kyazdani42/nvim-web-devicons'
+endif
+
+" Colorscheme
+Plug 'gruvbox-community/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'phanviet/vim-monokai-pro'
+Plug 'mbbill/undotree'
+"Plug 'https://github.com/adelarsq/vim-matchit'
+"Plug 'simnalamburt/vim-mundo'
+Plug 'chriskempson/base16-vim'
+" Initialize plugin system
+call plug#end()
+
+" 4.SET
+" BASIC SETUP:
+
+" do not look for compatibility with old vi
+set nocompatible
+
+" enable syntax and plugins (for netrw)
+set exrc
+set number
+set relativenumber
+set hlsearch
+set hidden
+set noerrorbells
+set vb t_vb=
+set smartindent
+set ic
+set smartcase
+set tabstop=2
+set shiftwidth=2
+set softtabstop=0 noexpandtab
+"set nowrap
+"set cursorline
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+syntax enable
+filetype plugin on
+
+set incsearch
+set scrolloff=8
+set colorcolumn=80
+set signcolumn=yes
+set showcmd
+
+" disable auto commenting to next line
+" :help fo-table
+set formatoptions-=cro
+
+
+" Luke Smith
+set title
+set bg=dark
+set go=a
+set mouse=a
+set clipboard+=unnamedplus
+" set noshowmode
+
+set t_Co=256
+set termguicolors
+"let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_termcolors = '16'
+if has("gui_running")
+	colorscheme base16-3024
+	highlight LineNr guifg=#996600
+	highlight LineNr guibg=black
+else 
+	colorscheme gruvbox
+	highlight Normal guibg=none
+endif
+
+
+
+" 5-SNIPPETS:
+"
+" Read an empty HTML template and move cursor to title
+nnoremap ,html :read $HOME/.config/nvim/.skeleton.html<CR>3jwf>a
+" nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
+
+" 6-COMMAND
+command! DATAON cd /home/xyz/Documents/github/dataon
+command! TECH cd /home/xyz/Documents/github/tech
+command! PE cd /home/xyz/Documents/github/personal
 
 
 " FINDING FILES: - THOUGHTBOT
@@ -253,16 +404,6 @@ let g:netrw_preview=1
 
 
 
-" SNIPPETS:
-"
-" Read an empty HTML template and move cursor to title
-nnoremap ,html :read $HOME/.config/nvim/.skeleton.html<CR>3jwf>a
-" nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
-
-" NOW WE CAN:
-" - Take over the world!
-"   (with much fewer keystrokes)
-
 
 " BUILD INTEGRATION:
 "
@@ -289,47 +430,6 @@ set makeprg=bundle\ exec\ rspec\ -f\ QuickFixFormatter
 " - :cn and :cp to navigate forward and back
 
 
-" Vundle
-" Plugin 'tpope/vim-surround'
-" Plugin 'tpope/vim-commentary'
-" Plugin 'tpope/vim-repeat'
-" Plugin 'tpope/vim-liquid'
-" nerdtree
-
-call plug#begin()
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Vim (Windows): '~/vimfiles/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-" You can specify a custom plugin directory by passing it as the argument
-"   - e.g. `call plug#begin('~/.vim/plugged')`
-"   - Avoid using standard Vim directory names like 'plugin'
-
-" Make sure you use single quotes
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'kyazdani42/nvim-web-devicons'
-
-" Colorscheme
-Plug 'gruvbox-community/gruvbox'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'phanviet/vim-monokai-pro'
-Plug 'mbbill/undotree'
-"Plug 'https://github.com/adelarsq/vim-matchit'
-"Plug 'simnalamburt/vim-mundo'
-
-" Initialize plugin system
-call plug#end()
-
-set t_Co=256
-set termguicolors
-"let g:gruvbox_contrast_dark = 'hard'
-"let g:gruvbox_termcolors = '16'
-colorscheme gruvbox
-highlight Normal guibg=none
-
 "autocommand example TrimWhitespace
 "fun! TrimWhitespace()
 "	let l:save = winsaveview()
@@ -342,18 +442,3 @@ highlight Normal guibg=none
 "	autocmd BufWritePre * :call TrimWhitespace()
 "augroup END
 
-filetype plugin indent on
-inoremap ' ''<ESC>ha
-inoremap " ""<ESC>ha
-inoremap ` ``<ESC>ha
-inoremap ( ()<ESC>ha
-inoremap [ []<ESC>ha
-inoremap { {}<ESC>ha
-inoremap /* /** */<ESC>2ha
-
-"Mapping related to PHP
-inoremap ;; <C-o>A;
-inoremap ,, <C-o>A,
-
-"inoremap =<space> <space>=<space>
-inoremap =><space> <space>=><space>

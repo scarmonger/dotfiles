@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 # i3 config in ~/.config/i3/config :
