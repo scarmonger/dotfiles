@@ -155,7 +155,14 @@ bindsym $wew+minus scratchpad show
 
 # Show the skype scratchpad window, if already open
 bindsym $mod+c [title="Skype"] scratchpad show
-bindsym $wew+c [title="Skype"] scratchpad show
+bindsym $wew+s [title="Skype"] scratchpad show
+bindsym $wew+r [title="ranger"] scratchpad show
+bindsym $wew+w [title="WhatsApp"] scratchpad show
+bindsym $wew+f [class="firefox"] scratchpad show
+bindsym $wew+k [class="KeePass2"] scratchpad show
+bindsym $wew+v [class="vlc"] scratchpad show
+bindsym $wew+n [title="NVIM$"] scratchpad show
+bindsym $wew+e [class="wpsoffice"] scratchpad show
 
 
 #navigate workspaces next / previous
@@ -395,8 +402,8 @@ bindsym $mod+F10 exec /opt/google/chrome/google-chrome --profile-directory=Defau
 bindsym $mod+F12 exec kitty -e ping gmail.com 
 bindsym $mod+Shift+F12 exec kitty -e ping 192.168.0.1 -s 1000
 bindsym $mod+Shift+d --release exec "killall dunst"
-# bindsym $mod+z exec kitty -e 'nvim'
-bindsym Print exec --no-startup-id ksnip
+bindsym $mod+z exec kitty -e 'nvim'
+bindsym Print exec --no-startup-id ksnip -r	
 
 # Lock screen$
 bindsym $mod+Escape exec --no-startup-id i3lock -etfi /home/xyz/Documents/eOS/tea.png

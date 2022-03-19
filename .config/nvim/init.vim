@@ -41,9 +41,9 @@ if has("gui_running")
   endif
 else
 	nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-	nnoremap <leader>ei :vsplit /home/xyz/.config/i3/config<cr>
-	nnoremap <leader>er :vsplit /home/xyz/.config/ranger/rc.conf<cr>
-	nnoremap <leader>eb :vsplit /home/xyz/.bashrc<cr>
+	nnoremap <leader>ei :vsplit ~/.config/i3/config<cr>
+	nnoremap <leader>er :vsplit ~/.config/ranger/rc.conf<cr>
+	nnoremap <leader>eb :vsplit ~/.bash_aliases<cr>
 	nnoremap <leader>so :source $MYVIMRC<CR>
 
 endif
@@ -72,8 +72,8 @@ inoremap jk <esc>
 " inoremap <esc> <nop>
 
 " Mapping to reload configuration
-"nnoremap <leader>aa :source /home/xyz/.config/nvim/init.vim <CR>
-"nnmap <leader>aa :source /home/xyz/.config/nvim/init.vim <CR>
+"nnoremap <leader>aa :source ~/.config/nvim/init.vim <CR>
+"nnmap <leader>aa :source ~/.config/nvim/init.vim <CR>
 
 " Shortcut for telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -111,9 +111,9 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>wc :cd %:h<cr>
 
 " Change directory "
-nnoremap <leader>wa :cd /home/xyz/Documents/github/dataon<cr>:pwd<CR>
-nnoremap <leader>wt :cd /home/xyz/Documents/github/tech<cr>:pwd<CR>
-nnoremap <leader>wp :cd /home/xyz/Documents/github/personal<cr>:pwd<CR>
+nnoremap <leader>wa :cd ~/Documents/github/dataon<cr>:pwd<CR>
+nnoremap <leader>wt :cd ~/Documents/github/tech<cr>:pwd<CR>
+nnoremap <leader>wp :cd ~/Documents/github/personal<cr>:pwd<CR>
 
 nnoremap <leader>p :PlugInstall<cr>
 
@@ -171,8 +171,8 @@ nnoremap <C-k> :cprevious<CR>zzzv
 "Paste from x clipboard"
 inoremap <C-v> <C-r>+
 
-nnoremap <C-a> gg0VG
-inoremap <C-a> gg0VG
+nnoremap <C-a> gg0VGL
+inoremap <C-a> gg0VGL
 " nnoremap <C-s> gt
 " inoremap <C-s> gt
 
@@ -329,9 +329,9 @@ nnoremap ,html :read $HOME/.config/nvim/.skeleton.html<CR>3jwf>a
 " nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 
 " 6-COMMAND
-command! DATAON cd /home/xyz/Documents/github/dataon
-command! TECH cd /home/xyz/Documents/github/tech
-command! PE cd /home/xyz/Documents/github/personal
+command! DATAON cd ~/Documents/github/dataon
+command! TECH cd ~/Documents/github/tech
+command! PE cd ~/Documents/github/personal
 
 
 " FINDING FILES: - THOUGHTBOT
