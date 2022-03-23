@@ -13,7 +13,8 @@ alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 # top 5 processes that using most memory
 alias mem5="ps auxf | sort -nr -k 4 | head -5"
 alias cpu10="ps auxf | sort -nr -k 3 | head -10"
-
+# wmctrl -lG // to check all windows opened
+alias fa="wmctrl -r firefox -e 0,20,50,1224,800"
 alias rr="ranger"
 alias rs="sudo ranger"
 alias sus="i3lock -etfi ~/Documents/wp.png; systemctl suspend"
