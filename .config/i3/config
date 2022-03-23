@@ -14,7 +14,7 @@ set $wew Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 9
+font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -25,7 +25,7 @@ font pango:monospace 9
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -etfi /home/xyz/Documents/eOS/tea.png --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -etfi ~/Documents/wp.png --nofork
 
 # Andry
 # bindsym $mod+Shift+x exec i3lock --color=000000 & sleep 2 && xset dpms force off
@@ -163,6 +163,7 @@ bindsym $wew+k [class="KeePass2"] scratchpad show
 bindsym $wew+v [class="vlc"] scratchpad show
 bindsym $wew+n [title="NVIM$"] scratchpad show
 bindsym $wew+e [class="wpsoffice"] scratchpad show
+bindsym $wew+c [title="^xyz"] scratchpad show
 
 
 #navigate workspaces next / previous
@@ -263,9 +264,12 @@ assign [class="ksnip"] $ws8
 
 # Open specific applications in floating mode
 for_window [class="Galculator"] floating enable border pixel 1
+for_window [title="Skype"] floating enable border pixel 1
+for_window [title="WhatsApp"] floating enable border pixel 1
+for_window [class="KeePass2"] floating enable border pixel 1
 for_window [class="vlc"] floating enable border pixel 1
 for_window [class="Pcmanfm"] floating enable border normal
-for_window [class="Firefox"] floating enable border normal
+for_window [class="firefox"] floating enable border normal
 for_window [class="copyq"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 #for_window [class="Skype"] floating enable border normal
@@ -287,7 +291,7 @@ bindsym $mod+x mode "$mode_system"
 set $mode_system (l)ock, (s)uspend, (r)eboot, Sh(u)tdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3away, mode "default"
-    bindsym s exec kitty -e 'i3lock -etfi /home/xyz/Documents/eOS/tea.png; systemctl suspend', mode "default"
+    bindsym s exec kitty -e 'i3lock -etfi ~/Documents/wp.png; systemctl suspend', mode "default"
     #bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     #bindsym e exec --no-startup-id i3exit logout, mode "default"
     #bindsym h exec --no-startup-id i3exit hibernate, mode "default"
@@ -331,7 +335,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #status_command i3status
-				status_command exec /home/xyz/.config/i3status/mybar.sh
+				status_command exec ~/.config/i3status/mybar.sh
 }
 
 #############################
@@ -374,17 +378,12 @@ exec --no-startup-id copyq
 ## Start mount drive automatically
 exec --no-startup-id udiskie -a
 
-## Setup display monitor
-exec --no-startup-id xrandr --output LVDS-1 --auto --output VGA-1 --primary --mode 1600x900 --left-of LVDS-1
-
-# exec --no-startup-id xrandr --output LVDS-1 --auto --output VGA-1 --mode 1920x1080 --right-of LVDS-1
-
 
 ## Start feh for desktop background
-exec --no-startup-id feh --bg-fill /home/xyz/Documents/eOS/tea.png 
+exec --no-startup-id feh --bg-fill ~/Documents/wp.png 
 
 ## Setup lockscreen
-#exec --no-startup-id xautolock -time 2 -locker "i3lock -etfi /home/xyz/Documents/eOS/tea.png"
+#exec --no-startup-id xautolock -time 2 -locker "i3lock -etfi ~/Documents/wp.png"
 
 exec --no-startup-id xfce4-power-manager
 
@@ -396,7 +395,8 @@ bindsym $mod+F3 exec kitty -e 'ranger'
 bindsym $mod+Shift+F3 exec pcmanfm
 bindsym $mod+F4 exec obsidian
 bindsym $mod+F5 exec kitty -e 'mocp'
-bindsym $mod+F9 exec whatsapp-4linux 
+#bindsym $mod+F9 exec whatsapp-4linux 
+bindsym $mod+F9 exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm
 #bindsym $mod+F10 exec skypeforlinux 
 bindsym $mod+F10 exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=lljldmnnhjkandejalbjlndemhlcjepa
 bindsym $mod+F12 exec kitty -e ping gmail.com 
@@ -406,14 +406,21 @@ bindsym $mod+z exec kitty -e 'nvim'
 bindsym Print exec --no-startup-id ksnip -r	
 
 # Lock screen$
-bindsym $mod+Escape exec --no-startup-id i3lock -etfi /home/xyz/Documents/eOS/tea.png
+bindsym $mod+Escape exec --no-startup-id i3lock -etfi ~/Documents/wp.png
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
-# tp13 brightness control
-#bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
-
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
+
+# tp13 brightness control
+bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
+
+## Setup display monitor
+# exec --no-startup-id xrandr --output LVDS-1 --auto --output VGA-1 --primary --mode 1600x900 --left-of LVDS-1
+
+## tp13
+exec --no-startup-id xrandr --output eDP-1 --auto --output HDMI-1 --auto --left-of eDP-1
+

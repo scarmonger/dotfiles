@@ -20,6 +20,8 @@ let maplocalleader = "\\"
 nnoremap ; :
 nnoremap : ;
 
+" Handling registers 
+:nnoremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x \| reg "ab<CR>
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -43,7 +45,8 @@ else
 	nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 	nnoremap <leader>ei :vsplit ~/.config/i3/config<cr>
 	nnoremap <leader>er :vsplit ~/.config/ranger/rc.conf<cr>
-	nnoremap <leader>eb :vsplit ~/.bash_aliases<cr>
+	nnoremap <leader>eb :vsplit ~/.bashrc<cr>
+	nnoremap <leader>ea :vsplit ~/.bash_aliases<cr>
 	nnoremap <leader>so :source $MYVIMRC<CR>
 
 endif
