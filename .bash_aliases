@@ -22,9 +22,7 @@ alias cam="ffplay /dev/video0"
 
 # git
 alias gs="git status"
-alias ga="git add ."
-alias gm="git commit -m 'add'"
-alias gps="git push"
+alias gas="git add . && git commit -m 'add' && git push"
 alias gpl="git pull"
 
 alias gd="cd ~/Documents/github/dataon/ && nvim"
