@@ -163,7 +163,7 @@ bindsym $wew+k [class="KeePass2"] scratchpad show
 bindsym $wew+v [class="vlc"] scratchpad show
 bindsym $wew+n [title="NVIM$"] scratchpad show
 bindsym $wew+e [class="wpsoffice"] scratchpad show
-bindsym $wew+c [title="^xyz"] scratchpad show
+bindsym $wew+c [title="Google Chrome$"] scratchpad show
 
 
 #navigate workspaces next / previous
