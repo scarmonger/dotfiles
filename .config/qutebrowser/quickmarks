@@ -1,0 +1,5 @@
+timesheet https://doffice.dataon.com/sf6/index.cfm?xfid=cli.attendance.timesheet.timesheet&lreqts=1602583165007
+tsreport http://support.dataon.com/imppor/reporttimesheet.cfm
+imppor http://support.dataon.com/imppor/
+insys http://support.dataon.com/insys/index.cfm?mode=home
+doffice https://doffice.dataon.com/sf6/index.cfm

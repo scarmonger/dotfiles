@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $wew Mod1
+set $wew Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -161,7 +161,8 @@ bindsym $wew+w [title="WhatsApp"] scratchpad show
 bindsym $wew+f [class="firefox"] scratchpad show
 bindsym $wew+k [class="KeePass2"] scratchpad show
 bindsym $wew+v [class="vlc"] scratchpad show
-bindsym $wew+n [title="NVIM$"] scratchpad show
+bindsym $wew+n [title="tmux"] scratchpad show
+#bindsym $wew+n [title="NVIM$"] scratchpad show
 bindsym $wew+e [class="wpsoffice"] scratchpad show
 bindsym $wew+c [title="Google Chrome$"] scratchpad show
 
@@ -198,7 +199,7 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-bindsym $wew+1 workspace number $ws1
+#bindsym $wew+1 workspace number $ws1
 bindsym $wew+2 workspace number $ws2
 bindsym $wew+3 workspace number $ws3
 bindsym $wew+4 workspace number $ws4
@@ -259,13 +260,16 @@ bindsym $wew+Shift+0 move container to workspace $ws10; workspace $ws10
 assign [class="google-chrome"] $ws1
 # assign [class="firefox"] $ws2
 assign [class="ksnip"] $ws8
-#assign [class="whatsapp-4linux"] $ws9
-#assign [class="Skype"] $ws10
+assign [class="whatsapp-4linux"] $ws9
+assign [class="Skype"] $ws9
 
 # Open specific applications in floating mode
+#for_window [title="NVIM$"] floating enable border pixel 1
+for_window [title="tmux"] floating enable border pixel 1
 for_window [class="Galculator"] floating enable border pixel 1
-for_window [title="Skype"] floating enable border pixel 1
-for_window [title="WhatsApp"] floating enable border pixel 1
+#for_window [title="Skype"] floating enable border pixel 1
+#for_window [title="ranger"] floating enable border pixel 1
+#for_window [title="WhatsApp"] floating enable border pixel 1
 for_window [class="KeePass2"] floating enable border pixel 1
 for_window [class="vlc"] floating enable border pixel 1
 for_window [class="Pcmanfm"] floating enable border normal
@@ -274,7 +278,7 @@ for_window [class="copyq"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 #for_window [class="Skype"] floating enable border normal
 #for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="ksnip"] floating enable
+#for_window [class="ksnip"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -311,11 +315,11 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        #bindsym semicolon resize grow width 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 20 px or 20 ppt
+        bindsym j resize grow height 20 px or 20 ppt
+        bindsym k resize shrink height 20 px or 20 ppt
+        #bindsym semicolon resize grow width 20 px or 20 ppt
+        bindsym l resize grow width 20 px or 20 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -347,7 +351,7 @@ gaps inner 14
 gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner|outer current|all set|PLUS|minus <px>
 # gaps inner all set 10
 # gaps outer all plus 5
 
@@ -369,47 +373,71 @@ exec_always --no-startup-id xset r rate 300 50
 exec_always --no-startup-id setxkbmap -option caps:escape
 
 
-# exec --no-startup-id ksnip
-# exec --no-startup-id skypeforlinux
+exec --no-startup-id flameshot
+exec --no-startup-id skypeforlinux
 # exec --no-startup-id /opt/google/chrome/google-chrome --profile-directory=Default --app-id=lljldmnnhjkandejalbjlndemhlcjepa
-# exec --no-startup-id whatsapp-4linux
+exec --no-startup-id whatsapp-4linux
 exec --no-startup-id copyq
+exec --no-startup-id picom
 
 ## Start mount drive automatically
 exec --no-startup-id udiskie -a
 
 
 ## Start feh for desktop background
-exec --no-startup-id feh --bg-fill ~/Documents/wp.png 
+exec --no-startup-id feh --bg-fill ~/Dropbox/Archive/wallpaper/focus-1600x900\(720p\).jpg
 
 ## Setup lockscreen
 #exec --no-startup-id xautolock -time 2 -locker "i3lock -etfi ~/Documents/wp.png"
-
+exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id xfce4-power-manager
 
 ## Additional Shortcut
 bindsym $mod+F1 exec google-chrome
 bindsym $mod+Shift+F1 exec qutebrowser
 bindsym $mod+F2 exec firefox
+#bindsym $mod+Shift+F2 exec wmctrl -r firefox -e 0,20,50,1224,800
 bindsym $mod+F3 exec kitty -e 'ranger'
 bindsym $mod+Shift+F3 exec pcmanfm
 bindsym $mod+F4 exec obsidian
 bindsym $mod+F5 exec kitty -e 'mocp'
-#bindsym $mod+F9 exec whatsapp-4linux 
-bindsym $mod+F9 exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm
-#bindsym $mod+F10 exec skypeforlinux 
-bindsym $mod+F10 exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=lljldmnnhjkandejalbjlndemhlcjepa
+bindsym $mod+F9 exec whatsapp-4linux 
+#bindsym $mod+F9 exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm
+bindsym $mod+F10 exec skypeforlinux 
+#bindsym $mod+F10 exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=lljldmnnhjkandejalbjlndemhlcjepa
 bindsym $mod+F12 exec kitty -e ping gmail.com 
 bindsym $mod+Shift+F12 exec kitty -e ping 192.168.0.1 -s 1000
 bindsym $mod+Shift+d --release exec "killall dunst"
-bindsym $mod+z exec kitty -e 'nvim'
-bindsym Print exec --no-startup-id ksnip -r	
+bindsym $mod+z exec kitty -e tmux attach -t nvim || tmux new -s nvim
+bindsym Print exec --no-startup-id flameshot gui
 
 # Lock screen$
 bindsym $mod+Escape exec --no-startup-id i3lock -etfi ~/Documents/wp.png
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+#bindsym $mod+m bar mode toggle
+bindsym $mod+plus bar mode toggle
+
+##
+## move floating windows with keys
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+	bindsym $mod+Tab focus right
+
+		bindsym Left  move left
+		bindsym Down  move down
+		bindsym Up    move up
+		bindsym Right move right
+
+		bindsym h     move left
+		bindsym j     move down
+		bindsym k     move up
+		bindsym l     move right
+
+# back to normal: Enter or Escape
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
 
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
@@ -422,5 +450,13 @@ bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
 # exec --no-startup-id xrandr --output LVDS-1 --auto --output VGA-1 --primary --mode 1600x900 --left-of LVDS-1
 
 ## tp13
-exec --no-startup-id xrandr --output eDP-1 --auto --output HDMI-1 --auto --left-of eDP-1
+# exec --no-startup-id xrandr --output eDP-1 --mode 1600x900 --output HDMI-1 --auto --left-of eDP-1
+
+# exec --no-startup-id xrandr --output eDP-1 --mode 1600x900 --output DVI-I-1-1 --mode 1440x900 --left-of eDP-1
+# exec --no-startup-id xrandr --output eDP-1 --auto --output DVI-I-1-1 --auto --left-of eDP-1
+bindsym $mod+Shift+p exec --no-startup-id xrandr --output eDP-1 --mode 1600x900 --output DVI-I-1-1 --mode 1440x900 --left-of eDP-1 
+
+bindsym $mod+Shift+o exec xrandr --output DVI-I-1-1 --off
+exec --no-startup-id xmodmap -e "pointer = 3 2 1";
+
 

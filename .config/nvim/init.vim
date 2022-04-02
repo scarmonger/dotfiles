@@ -31,7 +31,7 @@ if has("gui_running")
   elseif has("gui_win32")
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 		nnoremap <leader>so :source $HOME\_vimrc<CR>
-		nnoremap <leader>ev :vsplit $$HOME\_vimrc<cr>
+		nnoremap <leader>ev :vsplit $HOME\_vimrc<cr>
     set guifont=Consolas:h11:cANSI
     set linespace=1
     set guioptions-=m  "menu bar
@@ -47,6 +47,8 @@ else
 	nnoremap <leader>er :vsplit ~/.config/ranger/rc.conf<cr>
 	nnoremap <leader>eb :vsplit ~/.bashrc<cr>
 	nnoremap <leader>ea :vsplit ~/.bash_aliases<cr>
+	nnoremap <leader>ep :vsplit ~/.config/picom/picom.conf<cr>
+	nnoremap <leader>eq :vsplit ~/.config/qutebrowser/config.py<cr>
 	nnoremap <leader>so :source $MYVIMRC<CR>
 
 endif

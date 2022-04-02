@@ -1,3 +1,4 @@
+# xdotool set_window --name "wew" 23068687
 alias df="df -h -x squashfs -x tmpfs -x devtmpfs"
 alias lsmount="mount | column -t"
 alias extip="curl icanhazip.com"
@@ -35,7 +36,7 @@ alias gp="cd ~/Documents/ && yt-dlp -f '\''bestaudio'\'' "
 # alias extres="xrandr --output LVDS-1 --auto --output VGA-1 --primary --mode 1600x900 --left-of LVDS-1"
 
 alias e230="xrandr --output LVDS-1 --auto --output VGA-1 --primary --auto --left-of LVDS-1"
-alias etp13="xrandr --output eDP-1 --auto --output HDMI-1 --auto --left-of eDP-1"
+alias setmon="xrandr --output eDP-1 --mode 1600x900 --output DVI-I-1-1 --mode 1440x900 --left-of eDP-1"
 
 alias mirror="echo xrandr --output VGA-1 --auto --scale-from 1366x768 --output LVDS-1"
 
@@ -47,3 +48,4 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export RANGER_LOAD_DEFAULT_RC='FALSE'
 export CUSTOM_NVIM_PATH='/usr/local/bin/nvim.appimage'
+
