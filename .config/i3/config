@@ -443,8 +443,8 @@ mode "move" {
 bindsym $mod+Shift+period exec systemctl suspend
 
 # tp13 brightness control
-bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 ## Setup display monitor
 # exec --no-startup-id xrandr --output LVDS-1 --auto --output VGA-1 --primary --mode 1600x900 --left-of LVDS-1
