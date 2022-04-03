@@ -113,7 +113,7 @@ nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <leader>w :w<cr>
 
 " Change directory to current directory"
-nnoremap <leader>wc :cd %:h<cr>
+nnoremap <leader>df :cd %:h<cr>
 
 " Change directory "
 nnoremap <leader>wa :cd ~/Documents/github/dataon<cr>:pwd<CR>

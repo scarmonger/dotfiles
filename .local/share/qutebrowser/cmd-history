@@ -1,0 +1,49 @@
+:set auto_save.session true 
+:open -t dmenu archwiki
+:open -t tlp archlinux
+:open -t https://wiki.archlinux.org/title/TLP
+:open -t tlp ubuntu
+:open -t acpi_call ubuntu
+:open -t tp-smapi ubuntu
+:open google
+:open -t aku sebodoh ini
+:open -t youtube
+:open -t vim vertical window
+:open -t ping linux
+:open -t mv * exclude
+:open -t mkdir: cannot create directory permission denied
+:open -t pevita pierce
+:open -t what is tlp-rdw 
+:open https://www.youtube.com/
+:open sfsupport.dataon.com
+:open youtube
+:open -t tabstop on visual
+:open -t vim could not quit window with ctrl wq
+:open -t uvuntu nvim -clipboard
+:open vim vs nvim
+:open neovide ubuntu
+:open -t neovim vimrc
+/vimrc
+:open -t set $EDITOR
+:open -t i3 alternate between container
+:set fonts.web.size.default 32
+:set fonts.web.size.default_fixed
+:set fonts.web.size.default_fixed 20
+:set fonts.web.size.default 16
+:set fonts.default_size 36pt
+:set fonts.default_size 20pt
+:set fonts.default_size 16pt
+:set fonts.web.size.default 32
+:set fonts.web.size.default 24
+:set fonts.web.size.default 28
+:set colors.webpage.bg black
+:set theme white
+:set colors.webpage.bg white
+:set scrolling.bar always
+:set scrolling.smooth true 
+:open -t how to remap esc and capslock vim
+:set fonts.default_size 10pt
+:set fonts.web.size.default 16
+:set fonts.web.size.default_fixed 13
+:version
+:q

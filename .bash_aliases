@@ -28,7 +28,7 @@ alias gasa="cd ~/Documents/github/dotfiles/ && git add . && git commit -m 'add' 
 alias gass="cd ~/Documents/github/dataon/ && git add . && git commit -m 'add' && git push"
 alias gasd="cd ~/Documents/github/tech/ && git add . && git commit -m 'add' && git push"
 alias gasf="cd ~/Documents/github/personal/ && git add . && git commit -m 'add' && git push"
-alias gpl="git pull"
+alias pullgit="cd ~/Documents/github/dotfiles/ && git pull && cd ~/Documents/github/dataon/ && git pull && cd ~/Documents/github/tech/ && git pull && cd ~/Documents/github/personal/ && git pull"
 
 alias gd="cd ~/Documents/github/dataon/ && nvim"
 alias gt="cd ~/Documents/github/tech/ && nvim"
@@ -52,3 +52,4 @@ export VISUAL='nvim'
 export RANGER_LOAD_DEFAULT_RC='FALSE'
 export CUSTOM_NVIM_PATH='/usr/local/bin/nvim.appimage'
 
+. ~/Documents/github/dotfiles/.fancy-bash-promt.sh

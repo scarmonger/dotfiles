@@ -356,7 +356,7 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+#smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace) # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
                                  
@@ -393,8 +393,8 @@ exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id xfce4-power-manager
 
 ## Additional Shortcut
-bindsym $mod+F1 exec google-chrome
-bindsym $mod+Shift+F1 exec qutebrowser
+bindsym $mod+F1 exec qutebrowser
+bindsym $mod+Shift+F1 exec google-chrome
 bindsym $mod+F2 exec firefox
 #bindsym $mod+Shift+F2 exec wmctrl -r firefox -e 0,20,50,1224,800
 bindsym $mod+F3 exec kitty -e 'ranger'
