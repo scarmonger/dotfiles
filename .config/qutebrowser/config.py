@@ -293,7 +293,7 @@ c.tabs.show = 'always'
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'cf': 'https://cfdocs.org/{}', 'si': 'https://sfsupport.dataon.com/app/ticket/forms/{}', 'wa': 'https://wiki.archlinux.org/?search={}', 'mdb': 'https://mariadb.com/kb/en/+search/?q={}', 'yts': 'https://www.youtube.com/results?search_query={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'cf': 'https://cfdocs.org/{}', 'sf': 'https://sfsupport.dataon.com/app/ticket/forms/{}', 'aw': 'https://wiki.archlinux.org/?search={}', 'mdb': 'https://mariadb.com/kb/en/+search/?q={}', 'yts': 'https://www.youtube.com/results?search_query={}','yu':'https://yufid.com/result_yufid.html?search={}'}
 
 # Background color of the tab bar.
 # Type: QssColor

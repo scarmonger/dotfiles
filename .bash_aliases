@@ -28,7 +28,8 @@ alias gasa="cd ~/Documents/github/dotfiles/ && git add . && git commit -m 'add' 
 alias gass="cd ~/Documents/github/dataon/ && git add . && git commit -m 'add' && git push"
 alias gasd="cd ~/Documents/github/tech/ && git add . && git commit -m 'add' && git push"
 alias gasf="cd ~/Documents/github/personal/ && git add . && git commit -m 'add' && git push"
-alias pullgit="cd ~/Documents/github/dotfiles/ && git pull && cd ~/Documents/github/dataon/ && git pull && cd ~/Documents/github/tech/ && git pull && cd ~/Documents/github/personal/ && git pull"
+alias pushall="cd ~/Documents/github/dotfiles/ && git add . && git commit -m 'add' && git push cd ~/Documents/github/dataon/ && git add . && git commit -m 'add' && git push && cd ~/Documents/github/tech/ && git add . && git commit -m 'add' && git push && cd ~/Documents/github/personal/ && git add . && git commit -m 'add' && git push"
+alias pullall="cd ~/Documents/github/dotfiles/ && git pull && cd ~/Documents/github/dataon/ && git pull && cd ~/Documents/github/tech/ && git pull && cd ~/Documents/github/personal/ && git pull"
 
 alias gd="cd ~/Documents/github/dataon/ && nvim"
 alias gt="cd ~/Documents/github/tech/ && nvim"

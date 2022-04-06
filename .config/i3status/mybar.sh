@@ -47,14 +47,22 @@ update_rate() {
   last_tx=$tx
 }
 
-update_dbstatus() {
-	dbstatus="$(/home/xyz/.dropbox/dropbox.py status)"	
-}
+#update_dbstatus() {
+#	dbstatus="$(/home/xyz/.dropbox/dropbox.py status)"	
+#}
+
+# i3status | (read line && echo "$line" && read line && echo "$line" && read line && echo "$line" && update_rate && while :
+# do
+#   read line
+#   update_rate
+# 	update_dbstatus
+#   echo ",[{\"full_text\":\"${rate}\" },{\"full_text\":\"${dbstatus}\" },${line#,\[}" || exit 1
+# done)
 
 i3status | (read line && echo "$line" && read line && echo "$line" && read line && echo "$line" && update_rate && while :
 do
-  read line
-  update_rate
-	update_dbstatus
-  echo ",[{\"full_text\":\"${rate}\" },{\"full_text\":\"${dbstatus}\" },${line#,\[}" || exit 1
+	read line
+	update_rate
+	echo ",[{\"full_text\":\"${rate}\" },${line#,\[}" || exit 1
 done)
+				

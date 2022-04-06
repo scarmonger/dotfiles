@@ -5,10 +5,11 @@ quickstart-done = 1
 qtwe_version = 5.15.2
 serviceworker_workaround = 514
 session-warning-shown = 1
+contact-info = 
 session = default
 
 [geometry]
-mainwindow = AdnQywADAAAAAAAAAAAAFAAABj8AAANtAAAAAAAAABQAAAY/AAADbQAAAAEAAAAABkAAAAAAAAAAFAAABj8AAANt
+mainwindow = AdnQywADAAAAAAeAAAAAFAAADb8AAANtAAAHgAAAABQAAA2/AAADbQAAAAEAAAAABkAAAAeAAAAAFAAADb8AAANt
 
 [inspector]
 

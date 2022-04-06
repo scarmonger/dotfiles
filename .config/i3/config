@@ -26,6 +26,7 @@ font pango:monospace 10
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -etfi ~/Documents/wp.png --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- . ~/matrixlock.sh 
 
 # Andry
 # bindsym $mod+Shift+x exec i3lock --color=000000 & sleep 2 && xset dpms force off
@@ -260,12 +261,14 @@ bindsym $wew+Shift+0 move container to workspace $ws10; workspace $ws10
 assign [class="google-chrome"] $ws1
 # assign [class="firefox"] $ws2
 assign [class="ksnip"] $ws8
+assign [title="cmatrix"] $ws8
 assign [class="whatsapp-4linux"] $ws9
 assign [class="Skype"] $ws9
 
 # Open specific applications in floating mode
 #for_window [title="NVIM$"] floating enable border pixel 1
 for_window [title="tmux"] floating enable border pixel 1
+for_window [title="cmatrix"] floating enable border pixel 1
 for_window [class="Galculator"] floating enable border pixel 1
 #for_window [title="Skype"] floating enable border pixel 1
 #for_window [title="ranger"] floating enable border pixel 1
@@ -356,7 +359,7 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-#smart_gaps on
+smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace) # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
                                  
@@ -393,8 +396,8 @@ exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec --no-startup-id xfce4-power-manager
 
 ## Additional Shortcut
-bindsym $mod+F1 exec qutebrowser
-bindsym $mod+Shift+F1 exec google-chrome
+bindsym $mod+F1 exec google-chrome
+bindsym $mod+Shift+F1 exec qutebrowser
 bindsym $mod+F2 exec firefox
 #bindsym $mod+Shift+F2 exec wmctrl -r firefox -e 0,20,50,1224,800
 bindsym $mod+F3 exec kitty -e 'ranger'
@@ -411,8 +414,6 @@ bindsym $mod+Shift+d --release exec "killall dunst"
 bindsym $mod+z exec kitty -e tmux attach -t nvim || tmux new -s nvim
 bindsym Print exec --no-startup-id flameshot gui
 
-# Lock screen$
-bindsym $mod+Escape exec --no-startup-id i3lock -etfi ~/Documents/wp.png
 
 # hide/unhide i3status bar
 #bindsym $mod+m bar mode toggle
@@ -461,7 +462,10 @@ mode "display" {
 }
 
 # Suspend
-bindsym $mod+Shift+period exec systemctl suspend
+bindsym $mod+Shift+period workspace number $ws7; exec . ~/matrixlock.sh 
+
+# Lock screen$
+bindsym $mod+Escape workspace number $ws7; exec . ~/matrixlock.sh
 
 # tp13 brightness control
 bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
@@ -478,6 +482,6 @@ bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 # bindsym $mod+Shift+p exec --no-startup-id xrandr --output eDP-1 --mode 1600x900 --output DVI-I-1-1 --mode 1440x900 --left-of eDP-1 
 
 bindsym $mod+Shift+o exec xrandr --output DVI-I-1-1 --off
-exec --no-startup-id xmodmap -e "pointer = 3 2 1";
+#exec --no-startup-id xmodmap -e "pointer = 3 2 1";
 
 

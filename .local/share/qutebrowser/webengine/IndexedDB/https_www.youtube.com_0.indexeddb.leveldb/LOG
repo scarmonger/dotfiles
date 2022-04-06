@@ -1,3 +1,2 @@
-2022/02/06-09:30:03.266 8311 Reusing MANIFEST /home/xyz/.local/share/qutebrowser/webengine/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/02/06-09:30:03.266 8311 Recovering log #25
-2022/02/06-09:30:03.268 8311 Reusing old log /home/xyz/.local/share/qutebrowser/webengine/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000025.log 
+2022/04/03-13:25:57.622 2b0f Reusing MANIFEST /home/xyz/.local/share/qutebrowser/webengine/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/04/03-13:25:57.623 2b0f Recovering log #45
