@@ -72,6 +72,7 @@ nnoremap L $
 vnoremap H 0
 vnoremap L $
 inoremap jk <esc>
+vnoremap jk <esc>
 
 " <nop> (no operation)
 " inoremap <esc> <nop>
@@ -93,6 +94,7 @@ nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
 
 "Replace all is aliased to S
 nnoremap S :%s//gc<left><left><left>
+vnoremap S :s//gc<left><left><left>
 
 nnoremap <F2> "qyy
 vnoremap <F2> "qy

@@ -20,6 +20,9 @@ order += "disk /"
 order += "load"
 order += "memory"
 order += "tztime local"
+order += "run_watch VPNC"
+order += "path_exists VPN"
+order += "cpu_temperature 0"
 
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
@@ -32,7 +35,14 @@ ethernet _first_ {
 }
 
 battery all {
-        format = "%status %percentage %remaining"
+				format = "%status %percentage %remaining %emptytime"
+				format_down = "No battery"
+				status_chr = "⚡ CHR"
+				status_bat = "🔋 BAT"
+				status_unk = "? UNK"
+				status_full = "☻ FULL"
+				path = "/sys/class/power_supply/BAT%d/uevent"
+				low_threshold = 10
 }
 
 disk "/" {
@@ -53,3 +63,17 @@ tztime local {
         format = "%Y-%m-%d %H:%M:%S"
 }
 
+run_watch VPNC {
+        # file containing the PID of a vpnc process
+        pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+cpu_temperature 0 {
+	        format = "T: %degrees °C"
+					path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
+}

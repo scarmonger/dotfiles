@@ -1,3 +1,6 @@
 #!/bin/bash
 cd ~/Documents/deb-installer/qutebrowser/
 exec .venv/bin/python3 -m qutebrowser "$@"
+
+# folder path
+# /usr/local/bin

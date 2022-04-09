@@ -73,3 +73,13 @@
 /current 
 /current workspace
 :open https://sfsupport.dataon.com/
+:quickmark-load insy
+:quickmark-load insys
+:open dd linux
+:open -t ls human
+:open -t nvim not read config while opening file on etc file
+:open can't open file $MYVIMRC
+:version 
+:open -t qutebrowser downgrade version
+:version
+:open -t how to change system vimrc file:
