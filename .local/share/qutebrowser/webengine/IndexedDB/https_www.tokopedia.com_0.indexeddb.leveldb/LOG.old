@@ -1,5 +1,0 @@
-2022/04/03-13:08:24.327 2456 Reusing MANIFEST /home/xyz/.local/share/qutebrowser/webengine/IndexedDB/https_www.tokopedia.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/04/03-13:09:32.163 1a1f Level-0 table #5: started
-2022/04/03-13:09:32.166 1a1f Level-0 table #5: 54050 bytes OK
-2022/04/03-13:09:32.169 1a1f Delete type=0 #3
-2022/04/03-13:09:32.169 1a1f Manual compaction at level-0 from (begin) .. (end); will stop at (end)
