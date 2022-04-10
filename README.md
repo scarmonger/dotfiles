@@ -11,5 +11,5 @@ sudo ln -s ~/Documents/github/dotfiles/.config/i3status ~/.config/i3status
 sudo ln -s ~/Documents/github/dotfiles/.config/picom ~/.config/picom
 sudo ln -s ~/Documents/github/dotfiles/.config/qutebrowser ~/.config/qutebrowser
 sudo ln -s ~/Documents/github/dotfiles/qutebrowser /usr/local/bin/qutebrowser
-sudo ln -s ~/Documents/github/dotfiles/.local/share/qutebrowser /home/xyz/.local/share/qutebrowser
+sudo ln -s ~/Documents/github/dotfiles/.config/kitty ~/.config/kitty
 sudo ln -s ~/Documents/github/dotfiles/.bash_aliases ~/.bash_aliases
