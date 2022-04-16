@@ -158,7 +158,7 @@ bindsym $wew+minus scratchpad show
 
 # Show the skype scratchpad window, if already open
 bindsym $mod+c [title="Skype"] scratchpad show
-bindsym $wew+s [title="Skype"] scratchpad show
+bindsym $wew+s [class="Skype"] scratchpad show
 bindsym $wew+r [title="ranger"] scratchpad show
 bindsym $wew+w [title="WhatsApp"] scratchpad show
 bindsym $wew+f [class="firefox"] scratchpad show
