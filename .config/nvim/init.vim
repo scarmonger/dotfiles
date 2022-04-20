@@ -101,6 +101,9 @@ vnoremap <F2> "qy
 nnoremap <F3> "qP
 inoremap <F3> <C-r>q 
 
+inoremap <F4> <ESC>:reg<CR>
+nnoremap <F4> :reg<CR>
+
 " Copy file name path to clipboard
 nnoremap <F10> :let @+ = expand("%:p")<CR>
 
