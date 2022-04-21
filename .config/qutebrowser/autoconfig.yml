@@ -8,6 +8,8 @@ config_version: 2
 settings:
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
+  scrolling.bar:
+    global: always
   statusbar.hide:
     global: false
   url.start_pages:
