@@ -7,6 +7,7 @@ SETUVAR _fish_abbr_full:sudo\x20tlp\x20fullcharge
 SETUVAR _fish_abbr_i:sudo\x20apt\x20install
 SETUVAR _fish_abbr_rr:ranger
 SETUVAR _fish_abbr_setbat:sudo\x20tlp\x20setcharge\x2020\x2030\x20BAT0
+SETUVAR _fish_abbr_tar:tar\x20\x2dxvf\x20file\x2etar\x2egz
 SETUVAR fish_color_autosuggestion:555
 SETUVAR fish_color_cancel:normal
 SETUVAR fish_color_command:005fd7
