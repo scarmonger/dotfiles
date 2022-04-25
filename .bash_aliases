@@ -1,3 +1,13 @@
+alias ya="yt-dlp -o '~/secondary/youtube/audio/%(channel)s_%(title)s.%(ext)s' -f 'bestaudio' "
+alias ys="yt-dlp -o '~/secondary/youtube/video/%(channel)s_%(title)s_%(height)s.%(ext)s' -f 18 "
+alias yh="yt-dlp -o '~/secondary/youtube/video/%(channel)s_%(title)s_%(height)s.%(ext)s' -f 22 "
+alias yf="yt-dlp -o '~/secondary/youtube/video/%(channel)s_%(title)s_%(height)s.%(ext)s' -f 'bestvideo[height<=1080][ext=mp4]+ba[ext=m4a]' "
+alias yf="yt-dlp -o '%(channel)s-%(title)s.%(ext)s' -f 'bestvideo[height<=1080][ext=mp4]+ba[ext=m4a]' "
+
+#sample alias yt-dlp buat :
+#1. file name {nama channel}-{title video}
+#2. download video full hd lalu di merge (perlu install ffmpeg)
+
 # xdotool set_window --name "wew" 23068687
 alias df="df -h -x squashfs -x tmpfs -x devtmpfs"
 alias lsmount="mount | column -t"

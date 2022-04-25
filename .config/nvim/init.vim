@@ -100,6 +100,7 @@ nnoremap <F2> "qyy
 vnoremap <F2> "qy
 nnoremap <F3> "qP
 inoremap <F3> <C-r>q 
+nnoremap <F4> :reg<cr>
 
 " Copy file name path to clipboard
 nnoremap <F10> :let @+ = expand("%:p")<CR>
@@ -263,6 +264,7 @@ Plug 'mbbill/undotree'
 "Plug 'https://github.com/adelarsq/vim-matchit'
 "Plug 'simnalamburt/vim-mundo'
 Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-fugitive'
 " Initialize plugin system
 call plug#end()
 

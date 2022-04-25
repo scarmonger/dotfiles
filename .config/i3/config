@@ -270,6 +270,7 @@ assign [class="Skype"] $ws9
 # Open specific applications in floating mode
 #for_window [title="NVIM$"] floating enable border pixel 1
 for_window [title="tmux"] floating enable border pixel 1
+for_window [title="^Authorization Login*"] floating enable border pixel 1
 for_window [title="cmatrix"] floating enable border pixel 1
 for_window [class="Galculator"] floating enable border pixel 1
 #for_window [title="Skype"] floating enable border pixel 1
@@ -454,10 +455,13 @@ mode "display" {
 		bindsym Up    move up
 		bindsym Right move right
 
-		bindsym h     exec --no-startup-id xrandr --output eDP-1 --mode 1600x900 --output DVI-I-1-1 --mode 1440x900 --left-of eDP-1 
-		bindsym j     exec --no-startup-id xrandr --output eDP-1 --mode 1600x900 --output VGA-1 --mode 1600x900 --left-of eDP-1 
+		bindsym h     exec --no-startup-id xrandr --output eDP-1 --mode 1600x900 --output VGA-1 --mode 1600x900 --left-of eDP-1 
+		bindsym j     exec --no-startup-id xrandr --output eDP-1 --mode 1600x900 --output DVI-I-1-1 --mode 1440x900 --left-of eDP-1 
 		bindsym k     move up
 		bindsym l     move right
+
+		bindsym m     exec --no-startup-id xmodmap -e "pointer = 1 2 3";
+		bindsym n     exec --no-startup-id xmodmap -e "pointer = 3 2 1";
 
 # back to normal: Enter or Escape
 		bindsym Return mode "default"
