@@ -8,6 +8,8 @@ alias yf="yt-dlp -o '%(channel)s-%(title)s.%(ext)s' -f 'bestvideo[height<=1080][
 #1. file name {nama channel}-{title video}
 #2. download video full hd lalu di merge (perlu install ffmpeg)
 
+alias cdp="cd ~/Dropbox/Dataon/Project/"
+
 # xdotool set_window --name "wew" 23068687
 alias df="df -h -x squashfs -x tmpfs -x devtmpfs"
 alias lsmount="mount | column -t"
@@ -26,7 +28,7 @@ alias mem5="ps auxf | sort -nr -k 4 | head -5"
 alias cpu10="ps auxf | sort -nr -k 3 | head -10"
 # wmctrl -lG // to check all windows opened
 alias fa="wmctrl -r firefox -e 0,20,50,1224,800"
-alias rr="ranger"
+alias r="ranger"
 alias rs="sudo ranger"
 alias sus="i3lock -etfi ~/Documents/wp.png; systemctl suspend"
 alias cala="cal 2022"
@@ -64,5 +66,5 @@ alias f="fish"
 #export VISUAL='nvim'
 #export RANGER_LOAD_DEFAULT_RC='FALSE'
 #export CUSTOM_NVIM_PATH='/usr/local/bin/nvim.appimage'
-
+alias dbmultirasa="mycli -h portal.multirasa.co.id -u sst_user -p P@ssw0rdsst -D dbsf_nbc_multirasa -P 5050"
 . ~/Documents/github/dotfiles/.fancy-bash-promt.sh

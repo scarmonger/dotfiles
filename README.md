@@ -30,3 +30,5 @@ sudo ln -s /home/xyz/Documents/deb-installer/ksnip-1.9.2-x86_64.AppImage /usr/bi
 sudo cp /home/xyz/Documents/deb-installer/dmenu_run_history /usr/bin/
 
 sudo ln -s ~/Documents/github/dotfiles/dwm.desktop /usr/share/xsessions
+
+sudo ln -s ~/Documents/VirtualBox\ VMs ~/VirtualBox\ VMs
