@@ -58,9 +58,11 @@ alias tr="tmux attach -t ranger || tmux new -s ranger"
 alias tv="tmux attach -t nvim || tmux new -s nvim"
 alias td="tmux attach -t download || tmux new -s download"
 
-export EDITOR='nvim'
-export VISUAL='nvim'
-export RANGER_LOAD_DEFAULT_RC='FALSE'
-export CUSTOM_NVIM_PATH='/usr/local/bin/nvim.appimage'
+alias v="nvim"
+alias f="fish"
+#export EDITOR='nvim'
+#export VISUAL='nvim'
+#export RANGER_LOAD_DEFAULT_RC='FALSE'
+#export CUSTOM_NVIM_PATH='/usr/local/bin/nvim.appimage'
 
 . ~/Documents/github/dotfiles/.fancy-bash-promt.sh
