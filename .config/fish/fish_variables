@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__2C_sbm:PT\x2e\x20Shimano\x20Batam
+SETUVAR _fish_abbr_cdp:cd\x20\x7e/Dropbox/Dataon/Project/
 SETUVAR _fish_abbr_df:df\x20\x2dh\x20\x2dx\x20squashfs\x20\x2dx\x20tmpfs\x20\x2dx\x20devtmpfs
 SETUVAR _fish_abbr_full:sudo\x20tlp\x20fullcharge
 SETUVAR _fish_abbr_i:sudo\x20apt\x20install

@@ -6,6 +6,39 @@
 
 config_version: 2
 settings:
+  bindings.commands:
+    global:
+      normal:
+        ',do': 'jseval /*NdjBwpdoKyYbrx4giq02NdjBwpdoKyYbrx4giq02NdjBwpdoKyYbrx4giq02NdjBwpdoKyYbrx4giq02*/javascript:  var
+          x = ''indodevniaga/marctinius/4.Spejize'';var xArr = x.split(''/'');if (document.getElementById(''txtAccount''))
+          document.getElementById(''txtAccount'').value = xArr[0];document.getElementById(''txtUserName'').value
+          = xArr[1];document.getElementById(''txtUserName'').onchange = function ()
+          {};document.getElementById(''txtPassword'').value = xArr[2];void(0);'
+        ',in': 'jseval javascript: /*PBuPd8Oxc19LMVXGWN6DPBuPd8Oxc19LMVXGWN6DPBuPd8Oxc19LMVXGWN6DPBuPd8Oxc19LMVXGWN6DPBuPd8Oxc19LMVXGWN6DPBuPd8Oxc19LMVXGWN6DPBuPd8Oxc19LMVXGWN6D*/document.getElementById(''loginUsername-inputEl'').value="marctinius";document.getElementById(''loginPassword-inputEl'').value="AkuLelakimu"'
+        ',mt': 'jseval /*NdjBwpdoKyYbrx4giq02NdjBwpdoKyYbrx4giq02NdjBwpdoKyYbrx4giq02NdjBwpdoKyYbrx4giq02*/javascript:  var
+          x = ''bankmantap/bankmantap/B4NkM6nT@p8'';var xArr = x.split(''/'');if (document.getElementById(''txtAccount''))
+          document.getElementById(''txtAccount'').value = xArr[0];document.getElementById(''txtUserName'').value
+          = xArr[1];document.getElementById(''txtUserName'').onchange = function ()
+          {};document.getElementById(''txtPassword'').value = xArr[2];void(0);'
+        ',so': config-source
+        ',ts': jseval var node,myObj={prev:function(){var e=document.getElementById("cal_start_date"),t=new
+          Date(e.value);do{t.setDate(t.getDate()-1);var a=t.getDay()}while(a<1||6==a);dt=t.getDate()<10?"0"+t.getDate():t.getDate();var
+          s=(t.getMonth()+1<10?"0"+(t.getMonth()+1):t.getMonth()+1)+"/"+dt+"/"+t.getFullYear();console.log(s),e.value=s,rubTanggal()}};function
+          next(){var e=document.getElementById("cal_start_date"),t=new Date(e.value);do{t.setDate(t.getDate()+1);var
+          a=t.getDay()}while(a<1||6==a);dt=t.getDate()<10?"0"+t.getDate():t.getDate();var
+          s=(t.getMonth()+1<10?"0"+(t.getMonth()+1):t.getMonth()+1)+"/"+dt+"/"+t.getFullYear();console.log(s),e.value=s,rubTanggal()}(node=document.createElement("link")).setAttribute("rel","stylesheet"),node.setAttribute("href","https://www.w3schools.com/w3css/4/w3.css"),document.getElementsByTagName("head")[0].appendChild(node),(node=document.createElement("div")).setAttribute("class","w3-clear
+          nextprev"),node.innerHTML='<a class="w3-btn" href="javascript:prev()" id="prev"
+          accesskey="p">❮<span class="w3-hide-small"> Previous</span></a><a class="w3-btn"
+          href="javascript:next()" id="next" accesskey="n"><span class="w3-hide-small">Next</span>❯</a><a
+          class="w3-btn" href="javascript:setDuration()" accesskey="s"><span class="w3-hide-small">Set
+          Timesheet</span></a>';var tmpEl=document.getElementsByTagName("fieldset")[0].getElementsByTagName("div");0==tmpEl.length&&document.getElementsByTagName("fieldset")[0].appendChild(node);
+        ',w': config-write-py --force
+        J: tab-prev
+        K: tab-next
+        xs: config-cycle statusbar.hide false true
+        xt: config-cycle tabs.show always switching
+        xx: config-cycle statusbar.hide false true; config-cycle tabs.show always
+          switching
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
   scrolling.bar:
