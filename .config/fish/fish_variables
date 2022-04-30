@@ -2,13 +2,26 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__2C_sbm:PT\x2e\x20Shimano\x20Batam
+SETUVAR _fish_abbr_c:cd\x20\x7e/Documents
 SETUVAR _fish_abbr_cdp:cd\x20\x7e/Dropbox/Dataon/Project/
+SETUVAR _fish_abbr_d:cd\x20\x7e/Downloads
+SETUVAR _fish_abbr_dbmultirasa:mycli\x20\x2dh\x20portal\x2emultirasa\x2eco\x2eid\x20\x2du\x20sst_user\x20\x2dp\x20P\x40ssw0rdsst\x20\x2dD\x20dbsf_nbc_multirasa\x20\x2dP\x205050
+SETUVAR _fish_abbr_dd:sudo\x20dd\x20if\x3d/home/xyz/Documents/artix\x2dbase\x2drunit\x2d20220123\x2dx86_64\x2eiso\x20of\x3d/dev/sdc\x20bs\x3d1M\x20status\x3dprogress
 SETUVAR _fish_abbr_df:df\x20\x2dh\x20\x2dx\x20squashfs\x20\x2dx\x20tmpfs\x20\x2dx\x20devtmpfs
+SETUVAR _fish_abbr_di:sudo\x20dpkg\x20\x2di
 SETUVAR _fish_abbr_full:sudo\x20tlp\x20fullcharge
 SETUVAR _fish_abbr_i:sudo\x20apt\x20install
+SETUVAR _fish_abbr_locmantap:sudo\x20sshfs\x20\x2do\x20allow_other\x2cdefault_permissions\x2cnonempty\x20\x2dp\x2022\x20imp\x2ddev\x40192\x2e168\x2e100\x2e221\x3a/media/sf6/\x20/mnt/mantap\x2dapp/
+SETUVAR _fish_abbr_mantap_2D_local:sudo\x20sshfs\x20\x2do\x20allow_other\x2cdefault_permissions\x2cnonempty\x20\x2dp\x2022\x20imp\x2ddev\x40192\x2e168\x2e100\x2e221\x3a/media/sf6/\x20/mnt/mantap\x2dapp/
+SETUVAR _fish_abbr_r:ranger
+SETUVAR _fish_abbr_rem:sudo\x20umount\x20/dev/sdc1
 SETUVAR _fish_abbr_rr:ranger
-SETUVAR _fish_abbr_setbat:sudo\x20tlp\x20setcharge\x2020\x2030\x20BAT0
+SETUVAR _fish_abbr_setbat:sudo\x20tlp\x20setcharge\x2025\x2030\x20BAT0
 SETUVAR _fish_abbr_tar:tar\x20\x2dxvf\x20file\x2etar\x2egz
+SETUVAR _fish_abbr_v:nvim
+SETUVAR _fish_abbr_ya:yt\x2ddlp\x20\x2df\x20251
+SETUVAR _fish_abbr_yd:yd\x2ddlp\x20\x2df\x2018
+SETUVAR _fish_abbr_yf:yt\x2ddlp\x20\x2dF
 SETUVAR fish_color_autosuggestion:555
 SETUVAR fish_color_cancel:normal
 SETUVAR fish_color_command:005fd7

@@ -21,7 +21,7 @@ order += "load"
 order += "path_exists VPN"
 order += "run_watch VPNC"
 order += "memory"
-order += "cpu_temperature 1"
+order += "cpu_temperature 0"
 order += "tztime local"
 
 wireless _first_ {

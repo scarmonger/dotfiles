@@ -1,3 +1,5 @@
+alias dbmultirasa="mycli -h portal.multirasa.co.id -u sst_user -p P@ssw0rdsst -D dbsf_nbc_multirasa -P 5050"
+
 alias ya="yt-dlp -o '~/secondary/youtube/audio/%(channel)s_%(title)s.%(ext)s' -f 'bestaudio' "
 alias ys="yt-dlp -o '~/secondary/youtube/video/%(channel)s_%(title)s_%(height)s.%(ext)s' -f 18 "
 alias yh="yt-dlp -o '~/secondary/youtube/video/%(channel)s_%(title)s_%(height)s.%(ext)s' -f 22 "
@@ -66,5 +68,4 @@ alias f="fish"
 #export VISUAL='nvim'
 #export RANGER_LOAD_DEFAULT_RC='FALSE'
 #export CUSTOM_NVIM_PATH='/usr/local/bin/nvim.appimage'
-alias dbmultirasa="mycli -h portal.multirasa.co.id -u sst_user -p P@ssw0rdsst -D dbsf_nbc_multirasa -P 5050"
 . ~/Documents/github/dotfiles/.fancy-bash-promt.sh

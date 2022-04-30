@@ -21,29 +21,33 @@ settings:
           = xArr[1];document.getElementById(''txtUserName'').onchange = function ()
           {};document.getElementById(''txtPassword'').value = xArr[2];void(0);'
         ',so': config-source
-        ',ts': jseval var node,myObj={prev:function(){var e=document.getElementById("cal_start_date"),t=new
-          Date(e.value);do{t.setDate(t.getDate()-1);var a=t.getDay()}while(a<1||6==a);dt=t.getDate()<10?"0"+t.getDate():t.getDate();var
-          s=(t.getMonth()+1<10?"0"+(t.getMonth()+1):t.getMonth()+1)+"/"+dt+"/"+t.getFullYear();console.log(s),e.value=s,rubTanggal()}};function
-          next(){var e=document.getElementById("cal_start_date"),t=new Date(e.value);do{t.setDate(t.getDate()+1);var
-          a=t.getDay()}while(a<1||6==a);dt=t.getDate()<10?"0"+t.getDate():t.getDate();var
-          s=(t.getMonth()+1<10?"0"+(t.getMonth()+1):t.getMonth()+1)+"/"+dt+"/"+t.getFullYear();console.log(s),e.value=s,rubTanggal()}(node=document.createElement("link")).setAttribute("rel","stylesheet"),node.setAttribute("href","https://www.w3schools.com/w3css/4/w3.css"),document.getElementsByTagName("head")[0].appendChild(node),(node=document.createElement("div")).setAttribute("class","w3-clear
-          nextprev"),node.innerHTML='<a class="w3-btn" href="javascript:prev()" id="prev"
-          accesskey="p">❮<span class="w3-hide-small"> Previous</span></a><a class="w3-btn"
-          href="javascript:next()" id="next" accesskey="n"><span class="w3-hide-small">Next</span>❯</a><a
-          class="w3-btn" href="javascript:setDuration()" accesskey="s"><span class="w3-hide-small">Set
-          Timesheet</span></a>';var tmpEl=document.getElementsByTagName("fieldset")[0].getElementsByTagName("div");0==tmpEl.length&&document.getElementsByTagName("fieldset")[0].appendChild(node);
+        ',ts': jseval function clickAccountInfo(o){return document.querySelector("#accountMaskLink-640332982").shadowRoot.querySelector("a
+          > span.link__text").click(),new Promise(e=>setTimeout(e,o))}function clickDownload(o){return
+          document.querySelector("#downloadActivityIcon").shadowRoot.querySelector("button").click(),new
+          Promise(e=>setTimeout(e,o))}function selectMenuDownload(){document.querySelector("#downloadActivityOptionId").shadowRoot.querySelector("#select-downloadActivityOptionId").click(),document.querySelector("#downloadActivityOptionId
+          > mds-select-option:nth-child(2)").shadowRoot.querySelector("div").click(),document.querySelector("#download").shadowRoot.querySelector("button").click()}
         ',w': config-write-py --force
+        ',wfh': 'jseval javascript:var d = new Date();d.setDate(d.getDate() - 5);dt
+          = d.getDate() < 10 ? %270%27 + d.getDate() : d.getDate();var mth = d.getMonth()
+          + 1 < 10 ? %270%27 + (d.getMonth()+1) : d.getMonth()+1;var tmp = mth + %27/%27
+          + dt + %27/%27 + d.getFullYear();let sdate = tmp;var d = new Date();d.setDate(d.getDate());dt
+          = d.getDate() < 10 ? %270%27 + d.getDate() : d.getDate();var mth = d.getMonth()
+          + 1 < 10 ? %270%27 + (d.getMonth()+1) : d.getMonth()+1;var tmp = mth + %27/%27
+          + dt + %27/%27 + d.getFullYear();let edate = tmp;window.location.href =
+          "https://doffice.dataon.com/sf6/?sfid=cli.report.wfhreport.wfhreport&start="
+          + sdate + "&end=" + edate;'
+        ',wh': 'jseval javascript:var d = new Date();d.setDate(d.getDate() - 5);dt
+          = d.getDate() < 10 ? %270%27 + d.getDate() : d.getDate();var mth = d.getMonth()
+          + 1 < 10 ? %270%27 + (d.getMonth()+1) : d.getMonth()+1;var tmp = mth + %27/%27
+          + dt + %27/%27 + d.getFullYear();let sdate = tmp;var d = new Date();d.setDate(d.getDate());dt
+          = d.getDate() < 10 ? %270%27 + d.getDate() : d.getDate();var mth = d.getMonth()
+          + 1 < 10 ? %270%27 + (d.getMonth()+1) : d.getMonth()+1;var tmp = mth + %27/%27
+          + dt + %27/%27 + d.getFullYear();let edate = tmp;window.location.href =
+          "https://doffice.dataon.com/sf6/?sfid=cli.report.wfhreport.wfhreport&start="
+          + sdate + "&end=" + edate;'
         J: tab-prev
         K: tab-next
         xs: config-cycle statusbar.hide false true
         xt: config-cycle tabs.show always switching
         xx: config-cycle statusbar.hide false true; config-cycle tabs.show always
           switching
-  content.register_protocol_handler:
-    https://mail.google.com?extsrc=mailto&url=%25s: false
-  scrolling.bar:
-    global: always
-  statusbar.hide:
-    global: false
-  url.start_pages:
-    global: https://www.startpage.com/

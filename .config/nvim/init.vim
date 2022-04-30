@@ -44,6 +44,7 @@ if has("gui_running")
 else
 	nnoremap <leader>ev :e $MYVIMRC<cr>
 	nnoremap <leader>ei :e ~/.config/i3/config<cr>
+	nnoremap <leader>es :e ~/.config/i3status/config<cr>
 	nnoremap <leader>er :e ~/.config/ranger/rc.conf<cr>
 	nnoremap <leader>eb :e ~/.bashrc<cr>
 	nnoremap <leader>ea :e ~/.bash_aliases<cr>
@@ -72,7 +73,7 @@ nnoremap L $
 vnoremap H 0
 vnoremap L $
 inoremap jk <esc>
-vnoremap jk <esc>
+" vnoremap jk <esc>
 
 " <nop> (no operation)
 " inoremap <esc> <nop>
