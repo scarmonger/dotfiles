@@ -1,6 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr__2C_ev:PT\x2e\x20Evergreen\x20Logitics\x20Indonesia
+SETUVAR _fish_abbr__2C_ever:Evergreen\x20Logitics\x20Indonesia
 SETUVAR _fish_abbr__2C_sbm:PT\x2e\x20Shimano\x20Batam
 SETUVAR _fish_abbr_c:cd\x20\x7e/Documents
 SETUVAR _fish_abbr_cdp:cd\x20\x7e/Dropbox/Dataon/Project/
